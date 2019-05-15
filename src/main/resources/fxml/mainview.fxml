@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #ffee95;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.labs.controller.MainController">
+   <children>
+      <ImageView blendMode="DARKEN" fitHeight="221.0" fitWidth="701.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@/img/tyre-2.png" />
+         </image>
+      </ImageView>
+      <MenuBar fx:id="menuBar" prefHeight="29.0" prefWidth="189.0" style="-fx-background-color: #ffee95;">
+         <menus>
+            <Menu fx:id="menuFile" mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem fx:id="openFileButton" mnemonicParsing="false" onAction="#openFile" text="Open"/>
+                  <MenuItem fx:id="saveFileButton" mnemonicParsing="false" onAction="#saveFile" text="Save" />
+                  <MenuItem fx:id="exitButton" mnemonicParsing="false" onAction="#closeApplication" text="Exit" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <HBox layoutY="65.0" prefHeight="341.0" prefWidth="700.0" style="-fx-background-color: #f7f0ca;">
+         <children>
+            <VBox prefHeight="341.0" prefWidth="171.0">
+               <children>
+                  <JFXTextField fx:id="numberField" focusColor="#9c88a4" promptText="Car number" style="-fx-prompt-text-fill: lightgray;" unFocusColor="#5a585b">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXTextField>
+                  <JFXButton fx:id="addNumberButton" onAction="#addNumber" prefHeight="33.0" prefWidth="165.0" stylesheets="@/css/button.css" text="Add" textFill="#5a585b">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <JFXListView fx:id="numberList" prefHeight="341.0" prefWidth="303.0" />
+            <VBox prefHeight="341.0" prefWidth="226.0">
+               <children>
+                  <JFXButton fx:id="showCoolPlatesButton" onAction="#showCoolPlates" prefHeight="39.0" prefWidth="226.0" stylesheets="@/css/button.css" text="Show cool plates" textFill="#5a585b">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="sortByInitialOrderButton" onAction="#sortByInitialOrder" prefHeight="39.0" prefWidth="226.0" stylesheets="@/css/button.css" text="Initial order" textFill="#5a585b">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="sortByRegionButton" layoutX="20.0" layoutY="15.0" onAction="#sortByRegion" prefHeight="39.0" prefWidth="226.0" stylesheets="@/css/button.css" text="Sort by region" textFill="#5a585b">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="sortByNumbersButton" layoutX="20.0" layoutY="59.0" onAction="#sortByNumbers" prefHeight="39.0" prefWidth="226.0" stylesheets="@/css/button.css" text="Sort by numbers" textFill="#5a585b">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="sortByLettersButton" layoutX="10.0" layoutY="98.0" onAction="#sortByLetters" prefHeight="39.0" prefWidth="226.0" stylesheets="@/css/button.css" text="Sort by letters" textFill="#5a585b">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="deletePlateButton" disable="true" layoutX="10.0" layoutY="137.0" onAction="#deletePlate" prefHeight="39.0" prefWidth="226.0" stylesheets="@/css/button.css" text="Delete plate" textFill="#5a585b">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="70.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
